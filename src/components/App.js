@@ -1,29 +1,29 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from  'react-router-dom';
+
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import "../App.css";
+
+
+import Navbar from './navBar/navBar';
+import Home from "./pages/home";
+import Reservas from './pages/reservas/reservas';
 
 
 class App extends Component {
   constructor(props){
     super(props);
 
-    var hoy = new Date(),
-      dia = hoy.getFullYear() + '-' + (hoy.getMonth() + 1) + '-' + hoy.getDate(),
-      diaMin = hoy.getFullYear() + '-01-01',
-      diaMax = hoy.getFullYear() + '-12-31';
 
     this.state = {
-      fechaMin: diaMin,
-      fechaMax: diaMax,
-      fecha: dia,
       ciudades: [],
       id_origen: "",
       origen_name: "",
       destino_id: "",
       destino_name: "",
       vuelos: [],
-      carrito: []
+      carrito: [],
+      numReservas: ""
     }
 
     this.onChangeFecha= this.onChangeFecha.bind(this);
@@ -37,16 +37,7 @@ class App extends Component {
     this.props.fetchVuelos(); 
   }
 
-  opcionesCiudad() {
-    if(this.props.ciudades.ciudades !== undefined){
-      const ciudades = this.props.ciudades.ciudades.map((ciudad, index)=> {
-        return(<option  key={index}  value={ciudad.id_ciudad}>{ciudad.name}</option>)
-      })
-      return ciudades;
-    } else {
-      return(<option  key={0}  value={"sinciudad"}>Seleccione ciudad</option>)
-    }
-  }
+ 
 
   onChangeFecha(fecha) {
     this.setState({fecha: fecha});
@@ -94,50 +85,69 @@ class App extends Component {
     const id = event.target.id.slice(-1)
 
     const idPersonasVuelo = "personasVuelo" + id;
-    const numPers = document.getElementById(idPersonasVuelo).value;
+    const idTotalVuelo = "totalVuelo" + id;
+    
+    let numPers = 0;
+    if (document.getElementById(idPersonasVuelo).value != null) {
+      numPers = document.getElementById(idPersonasVuelo).value;
+    }
+    const totalVuelo = document.getElementById(idTotalVuelo).value;
+    console.log(totalVuelo);
     if(numPers > 0){
-      console.log(this.state);
       const addCarrito = {
         idVuelo: id,
         id_origen: this.state.id_origen,
         origen_name: this.state.origen_name,
         destino_id: this.state.id_destino,
         destino_name: this.state.destino_name,
-        personas: numPers
+        personas: numPers,
+        totalVuelo: totalVuelo
       };
       const carrito = this.state.carrito;
       carrito.push(addCarrito)
       console.log(carrito);
       this.setState({
-        carrito: carrito
+        carrito: carrito,
+        numReservas: carrito.length
       });
+      document.getElementById(idPersonasVuelo).value=0;
     }else {
       alert('Tiene que ser almenos 1 persona');
     }
   }
 
-
   render() {
+    const {ciudades} = this.props;
     return (
-
       <div className="App">
-        Aerolinea
-        <div className="App__Form">
-          <form>
-            <label htmlFor="origen"> Origen </label>
-            <select id="origen" name="origen" defaultValue={"none"}  onChange={this.onChangeOrigen}>
-              <option  key={"origen"}  value={"none"} disabled >Seleccione ciudad</option>
-              { this.opcionesCiudad() }
-            </select>
+        <Router>
+          <Navbar className="navbar"
+            numReservas={this.state.numReservas}
+          />
 
-            <label htmlFor="destino"> Destino </label>
-            <select id="destino" name="destino" defaultValue={"none"} onChange={this.onChangeDestino}>
-              <option  key={"destino"}  value={"none"} disabled>Seleccione ciudad</option>
-              { this.opcionesCiudad() }
-            </select>
-          </form>
-        </div>
+          <Switch>
+            <Route path='/' exact render={ props => (
+              <Home
+                {...props} 
+                className={'home'} 
+                ciudades={ciudades.ciudades}
+                vuelos={this.state.vuelos}
+                origen_name={this.state.origen_name}
+                destino_name={this.state.destino_name}
+                onChangeOrigen={this.onChangeOrigen}
+                onChangeDestino={this.onChangeDestino}
+                añadirCarrito={this.añadirCarrito}
+              />
+            )}/>
+            <Route path='/reservas' exact render={ props => (
+              <Reservas
+                className={'reservas'}
+              />
+            )}/>
+          </Switch>
 
+        </Router>
+        {/* 
         <div className="App__ListaVuelos">
           {
             this.state.vuelos.map((vuelo, index)=>{
@@ -166,7 +176,7 @@ class App extends Component {
               )
             })
           }
-        </div>
+        </div> */}
 
 
       </div>

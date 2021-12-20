@@ -1,0 +1,44 @@
+.home {
+    &__form {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-celeste;
+        
+        &__wrapper {
+            margin: 150px 0 75px 0;
+            background-color: $color-azul;
+            border-radius: 20px;
+            padding: 50px;
+            font-size: 28px;
+            box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.48);
+
+            &__titulo {
+                font-weight: bold;
+                color: white;
+            }
+            &__formulario {
+                &__selects{
+                    display: flex;
+                    gap: 20px;
+                    &__origen label,
+                    &__destino label{
+                        display: block;
+                        font-size: 20px;
+                        margin: 10px 0;
+                        color: white;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+/* mediaquery */
+@media (max-width: 690px) {
+    .home__form__wrapper__formulario__selects {
+        display: block;
+    }
+}
+
