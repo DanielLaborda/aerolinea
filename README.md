@@ -36,21 +36,25 @@ En este caso utilice un mock generado por postman  con los siguientes datos
 En el ambito de ciudades los datos son los siguientes:
 {
     "ciudades": [
+
         {
             "id_ciudad": 0,
             "name": "Ciudad de México",
             "letras": "CDMX" 
         },
+
         {
             "id_ciudad": 1,
             "name": "Guadalajara",
             "letras": "GDL"  
         },
+
         {
             "id_ciudad": 2,
             "name": "La paz",
             "letras": "LPZ" 
         },
+        
         {
             "id_ciudad": 3,
             "name": "Zaragoza",
