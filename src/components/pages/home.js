@@ -7,7 +7,7 @@ class Home extends Component {
         super(props);
     }
     render() {
-        const {className, ciudades, onChangeOrigen, onChangeDestino, vuelos, origen_name, destino_name, añadirCarrito} = this.props;
+        const {className, ciudades, onChangeOrigen, onChangeDestino, vuelos, origen_name, origen_letras, destino_name, destino_letras, añadirCarrito} = this.props;
         return (
             <div className={className}>
                 <Form  
@@ -20,7 +20,9 @@ class Home extends Component {
                     className={`${className}__listaVuelos`} 
                     vuelos={vuelos}
                     origen_name={origen_name}
+                    origen_letras={origen_letras}
                     destino_name={destino_name}
+                    destino_letras={destino_letras}
                     añadirCarrito={añadirCarrito}
                 />
                 

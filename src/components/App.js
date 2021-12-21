@@ -19,8 +19,10 @@ class App extends Component {
       ciudades: [],
       id_origen: "",
       origen_name: "",
+      origen_letras: "",
       destino_id: "",
       destino_name: "",
+      destino_letras: "",
       vuelos: [],
       carrito: [],
       datosUsuario: []
@@ -54,8 +56,10 @@ class App extends Component {
     this.setState({
       id_origen: origen.id_ciudad,
       origen_name: origen.name,
+      origen_letras: origen.letras,
       destino_id: "",
       destino_name: "",
+      destino_letras: "",
       vuelos: []
     });
     document.getElementById('destino').value = "none";
@@ -77,6 +81,7 @@ class App extends Component {
     this.setState({
       id_destino: destino.id_ciudad,
       destino_name: destino.name,
+      destino_letras: destino.letras,
       vuelos: vuelos
     });
   }
@@ -97,8 +102,10 @@ class App extends Component {
         idVuelo: id,
         id_origen: this.state.id_origen,
         origen_name: this.state.origen_name,
+        origen_letras: this.state.origen_letras,
         destino_id: this.state.id_destino,
         destino_name: this.state.destino_name,
+        destino_letras: this.state.destino_letras,
         personas: numPers,
         totalVuelo: totalVuelo
       };
@@ -108,8 +115,10 @@ class App extends Component {
       this.setState({
         id_origen: "",
         origen_name: "",
+        origen_letras: "",
         destino_id: "",
         destino_name: "",
+        destino_letras: "",
         vuelos: [],
         carrito: carrito
       });
@@ -162,7 +171,9 @@ class App extends Component {
                 ciudades={ciudades.ciudades}
                 vuelos={this.state.vuelos}
                 origen_name={this.state.origen_name}
+                origen_letras={this.state.origen_letras}
                 destino_name={this.state.destino_name}
+                destino_letras={this.state.destino_letras}
                 onChangeOrigen={this.onChangeOrigen}
                 onChangeDestino={this.onChangeDestino}
                 añadirCarrito={this.añadirCarrito}

@@ -1,0 +1,46 @@
+//comunes
+.select-blanco select {
+    background-color: white;
+    color: $color-marino;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.btn-reservas {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-celeste;
+    font-size: 26px;
+    font-family: 'Dosis', sans-serif!important;
+    width: 150px;
+    transition: all .5s linear;
+    padding: 10px;
+    &:hover {
+        font-weight: bold;
+        color: $color-marino;
+        background-color: $color-celeste ;
+        transform: translateY(-10px);
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+    }
+}
+
+/* mediaquery */
+@media (max-width: 690px) {
+    .select-blanco select {
+        width: auto;
+    }
+}
+
+@media (max-width: 350px) {
+    .btn-reservas {
+        font-size: 18px;
+        width: auto;
+    }
+}

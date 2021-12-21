@@ -23,11 +23,15 @@ class ListaCarrito extends Component {
                             <li key={index}>
                                 <div className={`${className}__li`}>
                                     <div className={`${className}__li__info`}>
-                                        idVuelo: {reserva.idVuelo}
-                                        trayecto:
-                                        {reserva.origen_name} --- {reserva.destino_name}
-                                        numero de personas:{reserva.personas}
-                                        precio: {reserva.totalVuelo}
+                                        {`Numero de vuelo: ${reserva.idVuelo}`}
+                                        <br/>
+                                        {`trayecto: ${reserva.origen_name} --- ${reserva.destino_name}`}
+                                        <br/>
+                                        {`numero de personas: ${reserva.personas}, precio: $${reserva.totalVuelo}`}
+                                        
+                                        
+                                        
+                                        
                                     </div>
                                     
                                     <div className={`${className}__li__boton`}>

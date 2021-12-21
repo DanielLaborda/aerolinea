@@ -10,7 +10,7 @@ export const calcularTotal = e => {
 };
 
 
-export default function VuelosLista({className, vuelos, origen_name, destino_name, añadirCarrito }) {
+export default function VuelosLista({className, vuelos, origen_name, origen_letras, destino_name, destino_letras, añadirCarrito }) {
     
     return(
         <div className={className}>
@@ -26,7 +26,7 @@ export default function VuelosLista({className, vuelos, origen_name, destino_nam
                             <div className={`${className}__wrapper__cover`}>
                                 <div className={`${className}__wrapper__cover__info`}>
                                     <div className={`${className}__wrapper__cover__info__trayecto`}>
-                                        {origen_name} - {destino_name}
+                                        {origen_letras} {origen_name} - {destino_letras} {destino_name}
                                     </div>
                                     <div className={`${className}__wrapper__cover__info__fecha`}>
                                         Dia de vuelo: {vuelo.fecha}

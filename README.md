@@ -30,3 +30,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### gitHub pages
 El link para ver la pagina ejecutandose: [https://daniellaborda.github.io/aerolinea/]
+
+### mock utilizado  y datos
+En este caso utilice un mock generado por postman  con los siguientes datos
+En el ambiente de ciudades
