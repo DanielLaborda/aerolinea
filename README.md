@@ -34,6 +34,7 @@ El link para ver la pagina ejecutandose: [https://daniellaborda.github.io/aeroli
 ### mock utilizado  y datos
 En este caso utilice un mock generado por postman  con los siguientes datos
 En el ambito de ciudades los datos son los siguientes:
+
 {
     "ciudades": [
 
@@ -54,7 +55,7 @@ En el ambito de ciudades los datos son los siguientes:
             "name": "La paz",
             "letras": "LPZ" 
         },
-        
+
         {
             "id_ciudad": 3,
             "name": "Zaragoza",
@@ -63,8 +64,10 @@ En el ambito de ciudades los datos son los siguientes:
     ]
 }
 En el ambito de vuelos los datos son los siguientes:
+
 {
     "vuelos": [
+
         {
             "id_vuelo": 0,
             "origen_id": 0,
@@ -73,6 +76,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 300
         },
+
         {
             "id_vuelo": 1,
             "origen_id": 0,
@@ -81,6 +85,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "15:00",
             "precio": 500
         },
+
         {
             "id_vuelo": 2,
             "origen_id": 0,
@@ -89,6 +94,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "12:00",
             "precio": 500
         },
+
         {
             "id_vuelo": 3,
             "origen_id": 0,
@@ -97,6 +103,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "11:00",
             "precio": 1500
         },
+
         {
             "id_vuelo": 4,
             "origen_id": 0,
@@ -105,6 +112,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "09:00",
             "precio": 6500
         },
+        
         {
             "id_vuelo": 5,
             "origen_id": 0,
@@ -113,6 +121,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 1400
         },
+
         {
             "id_vuelo": 6,
             "origen_id": 0,
@@ -121,6 +130,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 1700
         },
+
         {
             "id_vuelo": 7,
             "origen_id": 0,
@@ -129,6 +139,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "04:00",
             "precio": 1500
         },
+
         {
             "id_vuelo": 8,
             "origen_id": 0,
@@ -137,6 +148,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "21:00",
             "precio": 1700
         },
+
         {
             "id_vuelo": 9,
             "origen_id": 0,
@@ -145,6 +157,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "07:00",
             "precio": 600
         },
+
         {
             "id_vuelo": 10,
             "origen_id": 0,
@@ -153,6 +166,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "09:00",
             "precio": 1600
         },
+
         {
             "id_vuelo": 11,
             "origen_id": 0,
@@ -161,6 +175,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "18:30",
             "precio": 2600
         },
+
         {
             "id_vuelo": 12,
             "origen_id": 1,
@@ -169,6 +184,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "11:00",
             "precio": 2300
         },
+
         {
             "id_vuelo": 13,
             "origen_id": 1,
@@ -177,6 +193,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "12:00",
             "precio": 2340
         },
+
         {
             "id_vuelo": 14,
             "origen_id": 1,
@@ -185,6 +202,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "11:00",
             "precio": 2700
         },
+
         {
             "id_vuelo": 15,
             "origen_id": 1,
@@ -193,6 +211,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 3400
         },
+
         {
             "id_vuelo": 16,
             "origen_id": 1,
@@ -201,6 +220,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "10:00",
             "precio": 3500
         },
+
         {
             "id_vuelo": 17,
             "origen_id": 1,
@@ -209,6 +229,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "23:00",
             "precio": 2300
         },
+
         {
             "id_vuelo": 16,
             "origen_id": 1,
@@ -217,6 +238,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "10:00",
             "precio": 2400
         },
+
         {
             "id_vuelo": 17,
             "origen_id": 1,
@@ -225,6 +247,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "23:45",
             "precio": 3500
         },
+
         {
             "id_vuelo": 18,
             "origen_id": 1,
@@ -233,6 +256,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "08:00",
             "precio": 5500
         },
+
         {
             "id_vuelo": 19,
             "origen_id": 2,
@@ -241,6 +265,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 2650
         },
+
         {
             "id_vuelo": 20,
             "origen_id": 2,
@@ -249,6 +274,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 3000
         },
+
         {
             "id_vuelo": 21,
             "origen_id": 2,
@@ -257,6 +283,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "23:00",
             "precio": 3000
         },
+
         {
             "id_vuelo": 22,
             "origen_id": 2,
@@ -265,6 +292,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "08:00",
             "precio": 3000
         },
+
         {
             "id_vuelo": 23,
             "origen_id": 2,
@@ -273,6 +301,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "05:00",
             "precio": 3500
         },
+
         {
             "id_vuelo": 24,
             "origen_id": 2,
@@ -281,6 +310,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "18:00",
             "precio": 9000
         },
+
         {
             "id_vuelo": 25,
             "origen_id": 2,
@@ -289,6 +319,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "13:00",
             "precio": 3550
         },
+
         {
             "id_vuelo": 26,
             "origen_id": 2,
@@ -297,6 +328,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 3400
         },
+
         {
             "id_vuelo": 27,
             "origen_id": 2,
@@ -305,6 +337,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "10:00",
             "precio": 5300
         },
+
         {
             "id_vuelo": 28,
             "origen_id": 2,
@@ -313,6 +346,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 300
         },
+
         {
             "id_vuelo": 29,
             "origen_id": 2,
@@ -321,6 +355,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "23:00",
             "precio": 7300
         },
+
         {
             "id_vuelo": 30,
             "origen_id": 2,
@@ -329,6 +364,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 4300
         },
+
         {
             "id_vuelo": 31,
             "origen_id": 2,
@@ -337,6 +373,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "012:00",
             "precio": 6600
         },
+
         {
             "id_vuelo": 32,
             "origen_id": 3,
@@ -345,6 +382,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 2700
         },
+
         {
             "id_vuelo": 33,
             "origen_id": 3,
@@ -353,6 +391,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 4700
         },
+
         {
             "id_vuelo": 34,
             "origen_id": 3,
@@ -361,6 +400,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 4700
         },
+
         {
             "id_vuelo": 35,
             "origen_id": 3,
@@ -369,6 +409,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 7200
         },
+
         {
             "id_vuelo": 36,
             "origen_id": 3,
@@ -377,6 +418,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 2300
         },
+
         {
             "id_vuelo": 37,
             "origen_id": 3,
@@ -385,6 +427,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 900
         },
+
         {
             "id_vuelo": 38,
             "origen_id": 3,
@@ -393,6 +436,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 2900
         },
+
         {
             "id_vuelo": 39,
             "origen_id": 3,
@@ -401,6 +445,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 5900
         },
+
         {
             "id_vuelo": 40,
             "origen_id": 3,
@@ -409,6 +454,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 3000
         },
+
         {
             "id_vuelo": 41,
             "origen_id": 3,
@@ -417,6 +463,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "20:00",
             "precio": 8900
         },
+
         {
             "id_vuelo": 42,
             "origen_id": 3,
@@ -425,6 +472,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 3300
         },
+
         {
             "id_vuelo": 43,
             "origen_id": 3,
@@ -433,6 +481,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 7300
         },
+
         {
             "id_vuelo": 44,
             "origen_id": 3,
@@ -441,6 +490,7 @@ En el ambito de vuelos los datos son los siguientes:
             "hora": "00:00",
             "precio": 4300
         },
+        
         {
             "id_vuelo": 45,
             "origen_id": 3,
