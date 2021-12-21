@@ -1,16 +1,16 @@
 import React from "react";
 
+export const calcularTotal = e => {
+    if (e.target.value == ""){
+        e.target.value = 0;
+    }
+    var id = e.target.id.replace('personasVuelo','');
+    let total = document.getElementById("precio"+id).value * e.target.value;
+    document.getElementById("totalVuelo"+id).value = total;
+};
 
 
 export default function VuelosLista({className, vuelos, origen_name, destino_name, añadirCarrito }) {
-    const calcularTotal = e => {
-        if (e.target.value == ""){
-            e.target.value = 0;
-        }
-        var id = e.target.id.replace('personasVuelo','');
-        let total = document.getElementById("precio"+id).value * e.target.value;
-        document.getElementById("totalVuelo"+id).value = total;
-    };
     
     return(
         <div className={className}>

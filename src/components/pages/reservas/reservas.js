@@ -35,6 +35,15 @@ class Reservas extends Component {
         this.props.guardarDatos(datos);
     }
 
+    calcularTotal(){
+        let total = 0;
+        this.props.carrito.map((reserva) => {
+            console.log(parseInt(reserva.totalVuelo))
+            total = total + parseInt(reserva.totalVuelo)
+        })
+        return(total);
+    }
+
     render() {
         const {className, carrito, limpiarCarrito} = this.props;
         if(this.state.openModal === true) {
@@ -58,7 +67,9 @@ class Reservas extends Component {
                         eliminarCarrito={this.eliminarCarrito}
                       />
                     </div>
-                    
+                    <div className={`${className}__wrapper__totales`}>
+                       Total $ {this.calcularTotal()}
+                    </div>
                     <div className={`${className}__wrapper__botones`}>
                         {
                             (carrito != 0)?
