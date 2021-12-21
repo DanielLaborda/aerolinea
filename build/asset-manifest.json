@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aerolinea/static/css/main.c6e5c846.css",
+    "main.js": "/aerolinea/static/js/main.1961603f.js",
+    "index.html": "/aerolinea/index.html",
+    "main.c6e5c846.css.map": "/aerolinea/static/css/main.c6e5c846.css.map",
+    "main.1961603f.js.map": "/aerolinea/static/js/main.1961603f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6e5c846.css",
+    "static/js/main.1961603f.js"
+  ]
+}
