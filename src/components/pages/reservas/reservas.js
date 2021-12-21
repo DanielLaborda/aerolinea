@@ -56,7 +56,7 @@ class Reservas extends Component {
                     <div className={`${className}__wrapper__titulo`}>
                         {
                             (carrito == 0)?
-                                "Sin reservar pendientes"  
+                                "Sin reservas pendientes"  
                             :   "Mis reservas"
                         }
                     </div>
