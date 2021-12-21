@@ -24,7 +24,14 @@ class Navbar extends Component {
                             <div className='navbar__option__text' >Busquedas</div>
                         </NavLink>
                         <NavLink exact to="/reservas" className={`${className}__links-wrapper__option`}>
-                            <div className='navbar__option__text' >Mi carrito <span className='numReservas'>{numReservas}</span></div>
+                            <div className='navbar__option__text' >Mi carrito 
+                            {
+                                (numReservas != 0)?
+                                    <span className='numReservas'>{numReservas}</span>
+                                : ''
+                            }
+                            
+                            </div>
                         </NavLink>
                     </div>
                 </div>

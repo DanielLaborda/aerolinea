@@ -23,21 +23,22 @@ class App extends Component {
       destino_name: "",
       vuelos: [],
       carrito: [],
-      numReservas: ""
+      datosUsuario: []
     }
 
     this.onChangeFecha= this.onChangeFecha.bind(this);
     this.onChangeOrigen= this.onChangeOrigen.bind(this);  
     this.onChangeDestino= this.onChangeDestino.bind(this);  
     this.añadirCarrito= this.añadirCarrito.bind(this);  
+    this.eliminarCarrito = this.eliminarCarrito.bind(this);
+    this.limpiarCarrito = this.limpiarCarrito.bind(this);
+    this.guardarDatos = this.guardarDatos.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchCiudades();
     this.props.fetchVuelos(); 
   }
-
- 
 
   onChangeFecha(fecha) {
     this.setState({fecha: fecha});
@@ -81,18 +82,16 @@ class App extends Component {
   }
 
   añadirCarrito(event) {
-    console.log('se añade al carrito');
-    const id = event.target.id.slice(-1)
+    const id = event.target.id.replace('btn','');
 
     const idPersonasVuelo = "personasVuelo" + id;
     const idTotalVuelo = "totalVuelo" + id;
     
     let numPers = 0;
-    if (document.getElementById(idPersonasVuelo).value != null) {
+    if (document.getElementById(idPersonasVuelo).value != "") {
       numPers = document.getElementById(idPersonasVuelo).value;
     }
     const totalVuelo = document.getElementById(idTotalVuelo).value;
-    console.log(totalVuelo);
     if(numPers > 0){
       const addCarrito = {
         idVuelo: id,
@@ -107,13 +106,43 @@ class App extends Component {
       carrito.push(addCarrito)
       console.log(carrito);
       this.setState({
-        carrito: carrito,
-        numReservas: carrito.length
+        id_origen: "",
+        origen_name: "",
+        destino_id: "",
+        destino_name: "",
+        vuelos: [],
+        carrito: carrito
       });
       document.getElementById(idPersonasVuelo).value=0;
     }else {
       alert('Tiene que ser almenos 1 persona');
     }
+  }
+
+  eliminarCarrito(index) {
+    if(this.state.carrito.length > 1) {
+      const nuevoCarrito = this.state.carrito.splice(index, 1);
+      this.setState({
+        carrito: nuevoCarrito
+      });
+    } else {
+      this.setState({
+        carrito: []
+      });
+    }
+  }
+
+  limpiarCarrito() {
+    this.setState({
+      carrito: []
+    });
+  }
+
+  guardarDatos(datos) {
+    this.setState({
+      datosUsuario: datos,
+      carrito: []
+    });
   }
 
   render() {
@@ -122,7 +151,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Navbar className="navbar"
-            numReservas={this.state.numReservas}
+            numReservas={this.state.carrito.length}
           />
 
           <Switch>
@@ -137,48 +166,22 @@ class App extends Component {
                 onChangeOrigen={this.onChangeOrigen}
                 onChangeDestino={this.onChangeDestino}
                 añadirCarrito={this.añadirCarrito}
+                
               />
             )}/>
             <Route path='/reservas' exact render={ props => (
               <Reservas
+                {...props} 
                 className={'reservas'}
+                carrito={this.state.carrito}
+                eliminarCarrito={this.eliminarCarrito}
+                limpiarCarrito={this.limpiarCarrito}
+                guardarDatos={this.guardarDatos}
               />
             )}/>
           </Switch>
 
         </Router>
-        {/* 
-        <div className="App__ListaVuelos">
-          {
-            this.state.vuelos.map((vuelo, index)=>{
-              const key = "vuelo" + index;
-              const idPersonas = "personasVuelo" + vuelo.id_vuelo
-              const idButton = "btn" + vuelo.id_vuelo
-              return(
-                <div key={key}>
-                  <div className="trayecto">
-                    {this.state.origen_name} - {this.state.destino_name}
-                    <div className="fecha">
-                      {vuelo.fecha}
-                    </div>
-                    <div className="hora">
-                      {vuelo.hora}
-                    </div>
-                  </div>
-                  <div className="personas">  
-                    <label htmlFor={idPersonas}>Numero de personas</label>
-                    <input type="number" id={idPersonas} name={idPersonas} defaultValue={0} min={0} required/>
-                  </div>
-                  
-                  <button id={idButton} onClick={this.añadirCarrito}>Reservar</button>
-                  
-                </div>
-              )
-            })
-          }
-        </div> */}
-
-
       </div>
     );
   }

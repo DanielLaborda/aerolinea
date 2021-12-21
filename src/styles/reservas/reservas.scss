@@ -1,0 +1,76 @@
+.reservas {
+    background-color: $color-azul;
+    color: $color-celeste;
+    height: calc(100vh - 52px);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    &__wrapper {
+        &__titulo {
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        &__listaCarrito {
+            &__lista {
+                font-size: 20px;
+                font-weight: bold;
+                list-style-type: none;
+                &__li{
+                    display: grid;
+                    grid-template-columns: 1fr .1fr;
+                    border: 1px solid $color-celeste;
+                    padding: 20px;
+                    width: 1000px;
+
+                    &:hover {
+                        background-color: $color-celeste;
+                        color: $color-marino;
+                    }
+                    
+                    &__boton {
+                        float:right;
+                        text-align: center;
+                        & button {
+                            font-family: 'Dosis', sans-serif!important;
+                            border: 2px solid red;
+                            border-radius: 10px;
+                            background: transparent;
+                            color: red;
+                            font-weight: bold;
+                            font-size: 20px;
+                            padding: 10px;
+                            &:hover {
+                                background: red;
+                                color: white;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        &__botones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "a a a a b b";
+            margin-top: 20px;
+
+            &__limpiar {
+                text-align: left;             
+                
+            }
+            &__finalizar {
+                grid-area: b;
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media (max-width: 1230px) {
+    .reservas__wrapper__listaCarrito__lista__li {
+        width: 100%;
+    }
+}
